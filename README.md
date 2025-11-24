@@ -49,7 +49,7 @@ FastAPI (Redoc): http://localhost:8000/redoc
 
 O sistema utiliza SQLite com a tabela livros:
 
-id (INTEGER, PRIMARY KEY, AUTOINCREMENT)
+`id (INTEGER, PRIMARY KEY, AUTOINCREMENT)
 
 titulo (TEXT, NOT NULL)
 
@@ -57,7 +57,7 @@ autor (TEXT, NOT NULL)
 
 ano_publicacao (INTEGER, NOT NULL)
 
-disponivel (BOOLEAN, DEFAULT TRUE)
+disponivel (BOOLEAN, DEFAULT TRUE)`
 
 ### 🔧 Funcionalidades
 ***Flask (Interface Web)***
