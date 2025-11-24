@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 from database import db
-import requests  # Para integração opcional com FastAPI
+import requests
+import os
 
-app = Flask(__name__)
-app.secret_key = 'chave_secreta_biblioteca'  # Necessário para flash messages
+app = Flask(__name__, template_folder='templates')
+app.secret_key = 'chave_secreta_biblioteca'
 
 # Configuração para integração com FastAPI (opcional)
 FASTAPI_URL = "http://localhost:8000"
@@ -130,4 +131,9 @@ def listar_livros_api():
         return jsonify({"error": "FastAPI não está disponível"}), 503
 
 if __name__ == '__main__':
+    # Verifica se a pasta templates existe
+    if not os.path.exists('templates'):
+        os.makedirs('templates')
+        print("Pasta 'templates' criada. Adicione os arquivos HTML nela.")
+    
     app.run(debug=True, port=5000)
